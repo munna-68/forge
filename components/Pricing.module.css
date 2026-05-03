@@ -1,10 +1,5 @@
 .pricingHeader {
   margin-bottom: 48px;
-  opacity: 0;
-}
-
-.pricingHeader.visible {
-  animation: fade-in-up var(--duration-slow) var(--ease-out-expo) forwards;
 }
 
 .pricingGrid {

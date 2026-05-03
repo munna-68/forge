@@ -1,7 +1,4 @@
-"use client";
-
 import styles from "./Pricing.module.css";
-import { useInView } from "@/utils/useInView";
 
 const plans = [
   {
@@ -53,32 +50,20 @@ const plans = [
 ];
 
 export function Pricing() {
-  const [headerRef, headerInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
-  const [gridRef, gridInView] = useInView<HTMLDivElement>({ threshold: 0.05 });
-
   return (
     <section id="pricing" className="section">
-      <div
-        ref={headerRef}
-        className={`${styles.pricingHeader} ${headerInView ? styles.visible : ""}`}
-      >
+      <div className={styles.pricingHeader}>
         <div className="sectionEyebrow">Pricing</div>
         <h2 className="sectionTitle">Pay for what you use</h2>
         <p className="sectionDesc">
           Free for side projects. Scales when you do. No credit card to start.
         </p>
       </div>
-      <div ref={gridRef} className={styles.pricingGrid}>
-        {plans.map((p, i) => (
+      <div className={styles.pricingGrid}>
+        {plans.map((p) => (
           <div
             key={p.tier}
             className={`${styles.pricingCard} ${p.featured ? styles.featured : ""}`}
-            style={{
-              opacity: 0,
-              animation: gridInView
-                ? `fade-in-up var(--duration-slow) var(--ease-out-expo) ${i * 100}ms forwards`
-                : "none",
-            }}
           >
             <div className={styles.pricingTier}>{p.tier}</div>
             <div className={styles.pricingPrice}>

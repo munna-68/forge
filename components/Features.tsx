@@ -1,7 +1,4 @@
-"use client";
-
 import styles from "./Features.module.css";
-import { useInView } from "@/utils/useInView";
 
 const features = [
   {
@@ -37,34 +34,18 @@ const features = [
 ];
 
 export function Features() {
-  const [ref, isInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
-
   return (
     <section id="features" className="section">
-      <div ref={ref} className={styles.featuresHeader}>
-        {isInView && (
-          <>
-            <div className="sectionEyebrow">Features</div>
-            <h2 className="sectionTitle">What it does</h2>
-            <p className="sectionDesc">
-              Six things. No more. Each one solves a real problem you hit at 2
-              AM.
-            </p>
-          </>
-        )}
+      <div className={styles.featuresHeader}>
+        <div className="sectionEyebrow">Features</div>
+        <h2 className="sectionTitle">What it does</h2>
+        <p className="sectionDesc">
+          Six things. No more. Each one solves a real problem you hit at 2 AM.
+        </p>
       </div>
       <div className={styles.featuresGrid}>
-        {features.map((f, i) => (
-          <div
-            key={f.name}
-            className={styles.featureCell}
-            style={{
-              opacity: 0,
-              animation: isInView
-                ? `fade-in-up var(--duration-slow) var(--ease-out-expo) ${i * 80}ms forwards`
-                : "none",
-            }}
-          >
+        {features.map((f) => (
+          <div key={f.name} className={styles.featureCell}>
             <div className={styles.featureName}>{f.name}</div>
             <div className={styles.featureDesc}>{f.desc}</div>
             <div className={styles.featureTag}>{f.tag}</div>

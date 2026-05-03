@@ -1,8 +1,5 @@
-"use client";
-
 import styles from "./Steps.module.css";
 import { Terminal } from "./Terminal";
-import { useInView } from "@/utils/useInView";
 
 const steps = [
   {
@@ -64,30 +61,18 @@ const steps = [
 ];
 
 export function Steps() {
-  const [headerRef, headerInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
-  const [stepsRef, stepsInView] = useInView<HTMLDivElement>({ threshold: 0.05 });
-
   return (
     <section id="how-it-works" className="section">
-      <div
-        ref={headerRef}
-        className={`${styles.stepsHeader} ${headerInView ? styles.visible : ""}`}
-      >
+      <div className={styles.stepsHeader}>
         <div className="sectionEyebrow">How it works</div>
         <h2 className="sectionTitle">Three Commands</h2>
         <p className="sectionDesc">
           Install, connect, deploy. That&apos;s the entire workflow.
         </p>
       </div>
-      <div ref={stepsRef} className={styles.steps}>
-        {steps.map((s, i) => (
-          <div
-            key={s.num}
-            className={`${styles.step} ${stepsInView ? styles.visible : ""}`}
-            style={{
-              animationDelay: stepsInView ? `${i * 120}ms` : "0ms",
-            }}
-          >
+      <div className={styles.steps}>
+        {steps.map((s) => (
+          <div key={s.num} className={styles.step}>
             <div className={styles.stepNum}>{s.num}</div>
             <div className={styles.stepContent}>
               <h3>{s.title}</h3>

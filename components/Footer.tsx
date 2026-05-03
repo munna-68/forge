@@ -1,23 +1,9 @@
-"use client";
-
 import styles from "./Footer.module.css";
-import { useInView } from "@/utils/useInView";
 
 export function Footer() {
-  const [ref, isInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
-
   return (
     <footer id="install" className={styles.footer}>
-      <div
-        ref={ref}
-        className={styles.footerCta}
-        style={{
-          opacity: 0,
-          animation: isInView
-            ? "fade-in-up var(--duration-slow) var(--ease-out-expo) forwards"
-            : "none",
-        }}
-      >
+      <div className={styles.footerCta}>
         <h2>Ship it.</h2>
         <p>One command. Production in under 5 seconds.</p>
         <div className={styles.footerInstall}>

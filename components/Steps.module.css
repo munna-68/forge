@@ -1,10 +1,5 @@
 .stepsHeader {
   margin-bottom: 48px;
-  opacity: 0;
-}
-
-.stepsHeader.visible {
-  animation: fade-in-up var(--duration-slow) var(--ease-out-expo) forwards;
 }
 
 .steps {
@@ -19,11 +14,6 @@
   grid-template-columns: 48px 1fr;
   gap: 20px;
   align-items: start;
-  opacity: 0;
-}
-
-.step.visible {
-  animation: fade-in-left var(--duration-slow) var(--ease-out-expo) forwards;
 }
 
 .stepNum {
@@ -40,7 +30,7 @@
 }
 
 .step:hover .stepNum {
-  animation: pulse-glow 2s var(--ease-out-expo) infinite;
+  box-shadow: 0 0 12px oklch(72% 0.18 145 / 0.3);
 }
 
 .stepContent h3 {
