@@ -1,0 +1,93 @@
+.terminal {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--surface-alt);
+}
+
+.terminalDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+}
+
+.terminalDot.red {
+  border-color: var(--dot-red);
+}
+
+.terminalDot.yellow {
+  border-color: var(--dot-yellow);
+}
+
+.terminalDot.green {
+  border-color: var(--dot-green);
+}
+
+.terminalBody {
+  padding: 20px 24px;
+  overflow-x: auto;
+}
+
+.prompt {
+  color: var(--accent);
+}
+
+.cmd {
+  color: var(--fg);
+}
+
+.flag {
+  color: var(--accent-yellow);
+}
+
+.comment {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.success {
+  color: var(--accent);
+}
+
+.warn {
+  color: var(--accent-yellow);
+}
+
+.error {
+  color: var(--accent-red);
+}
+
+.dim {
+  color: var(--muted);
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

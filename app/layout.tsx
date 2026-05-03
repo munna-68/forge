@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Landing Page",
-  description: "A landing page project built with Next.js",
+  title: "Forge CLI — Deploy from the terminal. Nothing else.",
+  description:
+    "Forge CLI ships your code to production in one command. No dashboards. No YAML pipelines. No waiting.",
 };
 
 export default function RootLayout({

@@ -1,0 +1,118 @@
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.heroContent {
+  opacity: 0;
+  animation: fade-in-up var(--duration-slow) var(--ease-out-expo) forwards;
+}
+
+.heroContent > * {
+  opacity: 0;
+  animation: fade-in-up var(--duration-slow) var(--ease-out-expo) forwards;
+}
+
+.heroContent > *:nth-child(1) {
+  animation-delay: 100ms;
+}
+
+.heroContent > *:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.heroContent > *:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.heroTerminal {
+  opacity: 0;
+  animation: fade-in var(--duration-slow) var(--ease-out-expo) 350ms forwards;
+}
+
+.heroContent h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.heroDeck {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 480px;
+}
+
+.heroCta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btnPrimary {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--duration-fast) var(--ease-out-expo),
+    transform var(--duration-instant) var(--ease-out-expo);
+}
+
+.btnPrimary:hover {
+  text-decoration: none;
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btnPrimary:active {
+  transform: translateY(0);
+}
+
+.btnGhost {
+  display: inline-block;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 12px 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-out-expo);
+}
+
+.btnGhost:hover {
+  color: var(--fg);
+  text-decoration: underline;
+}
+
+.heroTerminal {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}

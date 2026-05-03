@@ -1,0 +1,62 @@
+.stepsHeader {
+  margin-bottom: 48px;
+  opacity: 0;
+}
+
+.stepsHeader.visible {
+  animation: fade-in-up var(--duration-slow) var(--ease-out-expo) forwards;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 720px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  align-items: start;
+  opacity: 0;
+}
+
+.step.visible {
+  animation: fade-in-left var(--duration-slow) var(--ease-out-expo) forwards;
+}
+
+.stepNum {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+.step:hover .stepNum {
+  animation: pulse-glow 2s var(--ease-out-expo) infinite;
+}
+
+.stepContent h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.stepContent p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.stepTerminal {
+  font-size: 13px;
+}

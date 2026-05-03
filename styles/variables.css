@@ -1,0 +1,23 @@
+:root {
+  --bg: oklch(12% 0.01 150);
+  --surface: oklch(18% 0.015 150);
+  --surface-alt: oklch(15% 0.012 150);
+  --fg: oklch(92% 0.01 150);
+  --muted: oklch(55% 0.02 150);
+  --border: oklch(40% 0.02 150);
+  --border-light: oklch(25% 0.015 150);
+  --accent: oklch(72% 0.18 145);
+  --accent-hover: oklch(78% 0.18 145);
+  --accent-yellow: oklch(75% 0.14 85);
+  --accent-red: oklch(65% 0.2 25);
+  --dot-red: oklch(55% 0.15 25);
+  --dot-yellow: oklch(75% 0.14 85);
+  --dot-green: oklch(70% 0.17 145);
+
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", "Fira Code", ui-monospace, Menlo, monospace;
+
+  --max-width: 1200px;
+  --content-width: 680px;
+
+  --radius: 0;
+}

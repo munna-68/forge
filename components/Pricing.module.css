@@ -1,0 +1,124 @@
+.pricingHeader {
+  margin-bottom: 48px;
+  opacity: 0;
+}
+
+.pricingHeader.visible {
+  animation: fade-in-up var(--duration-slow) var(--ease-out-expo) forwards;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.pricingCard {
+  background: var(--bg);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: background var(--duration-fast) var(--ease-out-expo);
+}
+
+.pricingCard.featured {
+  background: var(--surface);
+}
+
+.pricingCard:hover {
+  background: var(--surface);
+}
+
+.pricingCard.featured:hover {
+  background: oklch(20% 0.015 150);
+}
+
+.pricingTier {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.pricingPrice {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin-bottom: 4px;
+}
+
+.pricingPrice span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.pricingDesc {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.pricingFeatures {
+  list-style: none;
+  font-size: 13px;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.pricingFeatures li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--muted);
+  transition: color var(--duration-fast) var(--ease-out-expo);
+}
+
+.pricingFeatures li::before {
+  content: "+ ";
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.pricingCta {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  text-decoration: none;
+  transition: border-color var(--duration-fast) var(--ease-out-expo),
+    color var(--duration-fast) var(--ease-out-expo),
+    background var(--duration-fast) var(--ease-out-expo);
+}
+
+.pricingCta:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.pricingCard.featured .pricingCta {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  transition: background var(--duration-fast) var(--ease-out-expo);
+}
+
+.pricingCard.featured .pricingCta:hover {
+  background: var(--accent-hover);
+}
+
+@media (max-width: 900px) {
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+}
