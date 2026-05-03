@@ -5,3 +5,4 @@ export { Steps } from "./Steps";
 export { Pricing } from "./Pricing";
 export { Footer } from "./Footer";
 export { Terminal } from "./Terminal";
+export { Preloader } from "./Preloader";
