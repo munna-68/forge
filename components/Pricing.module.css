@@ -16,10 +16,12 @@
   display: flex;
   flex-direction: column;
   transition: background var(--duration-fast) var(--ease-out-expo);
+  position: relative;
 }
 
 .pricingCard.featured {
   background: var(--surface);
+  box-shadow: 0 0 0 1px var(--accent);
 }
 
 .pricingCard:hover {
